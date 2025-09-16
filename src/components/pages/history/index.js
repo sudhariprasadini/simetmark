@@ -5,15 +5,15 @@ import FooterOne from "../../layout/footers/footer-one";
 import CompanyHistory from "./history";
 
 const History = () => {
-    return (
-        <>
-            <SEO pageTitle="Company History" />
-            <HeaderTwo />
-            <BreadCrumb title="Company History" innerTitle="Company History" />
-            <CompanyHistory />
-            <FooterOne />
-        </>
-    );
+  return (
+    <>
+      <SEO pageTitle="Industries" />
+      <HeaderTwo />
+      <BreadCrumb title="Industries" innerTitle="Industries" />
+      <CompanyHistory />
+      <FooterOne />
+    </>
+  );
 };
 
 export default History;

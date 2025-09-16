@@ -5,15 +5,15 @@ import PricingPlansMain from "./pricing-plans";
 import FooterOne from "../../layout/footers/footer-one";
 
 const PricingPages = () => {
-    return (
-        <>
-            <SEO pageTitle="Price Plan" />
-            <HeaderTwo />
-            <BreadCrumb title="Price Plan" innerTitle="Price Plan" />
-            <PricingPlansMain />
-            <FooterOne />
-        </>
-    );
+  return (
+    <>
+      <SEO pageTitle="Technologies" />
+      <HeaderTwo />
+      <BreadCrumb title="Technologies" innerTitle="Technologies" />
+      <PricingPlansMain />
+      <FooterOne />
+    </>
+  );
 };
 
 export default PricingPages;

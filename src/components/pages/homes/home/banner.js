@@ -24,10 +24,16 @@ const BannerOne = () => {
               >
                 <div className="wow fadeInDown" data-wow-delay="1.2s">
                   <Link className="build_button mt-50" to="/request-quote">
-                    Start Today<i className="flaticon-right-up"></i>
+                    Request a Quote<i className="flaticon-right-up"></i>
                   </Link>
                 </div>
-                <div>
+                <div
+                  style={{
+                    display: "flex",
+                    flexDirection: "column",
+                    gap: "10px",
+                  }}
+                >
                   <div>
                     <h5>CNC Machining</h5>
                   </div>
@@ -40,14 +46,14 @@ const BannerOne = () => {
                 </div>
               </div>
               <div className="banner__one-content-award bounce_y">
-                <img src={award} alt="image" />
+                <img src={award} alt="imageAward" />
               </div>
             </div>
           </div>
         </div>
       </div>
       <div className="banner__one-image">
-        <img className="img_full" src={image} alt="image" />
+        <img className="img_full" src={image} alt="imageMain" />
       </div>
     </div>
   );

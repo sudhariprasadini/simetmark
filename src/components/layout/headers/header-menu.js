@@ -15,7 +15,7 @@ const MainMenu = () => {
           <Link to="/services">Services</Link>
         </li>
         <li>
-          <Link to="/services">Technologies</Link>
+          <Link to="/pricing-plans">Technologies</Link>
         </li>
         <li>
           <Link to="/history">Industries</Link>
