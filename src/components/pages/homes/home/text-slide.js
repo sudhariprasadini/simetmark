@@ -1,13 +1,13 @@
-import React from 'react';
-import portfolioData from '../../../data/portfolio-data';
-import icon1 from '../../../assets/img/icon/star.svg';
-import icon2 from '../../../assets/img/icon/star-dark.svg';
-import { Link } from 'react-router-dom';
+import React from "react";
+import portfolioData from "../../../data/portfolio-data";
+import icon1 from "../../../assets/img/icon/star.svg";
+// import icon2 from '../../../assets/img/icon/star-dark.svg';
+import { Link } from "react-router-dom";
 
 const TextSlide = () => {
-    return (
-        <>
-        <div className="scroll__slider section-padding pt-0">
+  return (
+    <>
+      {/* <div className="scroll__slider section-padding pt-0">
             <div className="text-slide">
                 <div className="sliders text_scroll">
                     <ul>
@@ -24,9 +24,9 @@ const TextSlide = () => {
                     </ul>
                 </div>
             </div>
-        </div>            
-        </>
-    );
+        </div>             */}
+    </>
+  );
 };
 
 export default TextSlide;

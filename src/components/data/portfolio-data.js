@@ -5,7 +5,7 @@ import image4 from "../assets/img/portfolio/portfolio-4.jpg";
 import image5 from "../assets/img/portfolio/portfolio-5.jpg";
 import image6 from "../assets/img/portfolio/portfolio-6.jpg";
 import image7 from "../assets/img/portfolio/portfolio-7.jpg";
-import image8 from "../assets/img/portfolio/portfolio-8.jpg";
+import image8 from "../assets/img/portfolio/portfolio-8.png";
 
 const portfolioData = [
   {

@@ -1,6 +1,6 @@
 import { Link } from "react-router-dom";
 import image from "../../assets/img/about/about-4.jpg";
-import bgImage from "../../assets/img/portfolio/portfolio-8.jpg";
+import bgImage from "../../assets/img/portfolio/portfolio-8.png";
 
 const AboutMain = () => {
   return (
