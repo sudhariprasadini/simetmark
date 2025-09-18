@@ -13,6 +13,8 @@ const servicesData = [
     description: "Precision turning, milling, boring, drilling, and threading.",
     number: "1",
     image: image1,
+    p1: " CNC (Computer Numerical Control) machining is a subtractive manufacturing process where computer-controlled cutting tools remove material from a workpiece to produce precise shapes and features. It’s widely used for components that demand repeatability, accuracy, tight tolerances and high surface quality — from single prototypes to long production runs. Modern CNC shops combine advanced machine tools, tooling systems, fixtures and inspection procedures to deliver parts that meet mechanical, dimensional and surface-finish specifications.",
+    h4: "Why choose CNC machining?",
   },
   {
     id: "Steel Forging",

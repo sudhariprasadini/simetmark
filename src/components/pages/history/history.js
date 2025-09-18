@@ -7,12 +7,16 @@ const CompanyHistory = () => {
       <div className="container">
         <div className="row">
           <div className="col-xl-12">
-            <div className="company__history-area">
+            <div style={{ display: "flex", flexWrap: "wrap", gap: "24px" }}>
               {historyData.map((item, id) => (
-                <div className="company__history-area-item" key={id}>
-                  <div className="company__history-area-item-date">
-                    <span>{item.date}</span>
-                  </div>
+                <div
+                  key={id}
+                  style={{
+                    flex: "1 1 calc(50% - 24px)",
+                    boxSizing: "border-box",
+                    marginBottom: "24px",
+                  }}
+                >
                   <div className="company__history-area-item-inner">
                     <div className="company__history-area-item-inner-image">
                       <img src={item.image} alt={item.title} />
