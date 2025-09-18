@@ -5,15 +5,15 @@ import ServicesMain from "./services";
 import FooterOne from "../../../layout/footers/footer-one";
 
 const ServicePage = () => {
-    return (
-        <>
-            <SEO pageTitle="Services" />
-            <HeaderTwo />
-            <BreadCrumb title="Services" innerTitle="Services" />
-            <ServicesMain />
-            <FooterOne />
-        </>
-    );
+  return (
+    <>
+      <SEO pageTitle="Services" />
+      <HeaderTwo />
+      <BreadCrumb title="Services" innerTitle="Services" />
+      <ServicesMain />
+      <FooterOne />
+    </>
+  );
 };
 
 export default ServicePage;

@@ -2,8 +2,8 @@ import React from "react";
 import { Link } from "react-router-dom";
 import servicesData from "../../../data/services-data";
 import ctaImage from "../../../assets/img/page/cta-1.jpg";
-import image1 from "../../../assets/img/portfolio/portfolio-5.jpg";
-import image2 from "../../../assets/img/portfolio/portfolio-8.png";
+// import image1 from "../../../assets/img/portfolio/portfolio-5.jpg";
+// import image2 from "../../../assets/img/portfolio/portfolio-8.png";
 
 const ServicesSingleMain = ({ singleData }) => {
   return (
@@ -14,7 +14,7 @@ const ServicesSingleMain = ({ singleData }) => {
             <div className="col-lg-4 columns_sticky">
               <div className="all__sidebar">
                 <div className="all__sidebar-item">
-                  <h4>Our Solutions</h4>
+                  <h4>Our Services</h4>
                   <div className="all__sidebar-item-category">
                     <ul>
                       {servicesData.slice(0, 5).map((data, id) => (
@@ -38,20 +38,27 @@ const ServicesSingleMain = ({ singleData }) => {
                   </Link>
                 </div>
                 <div className="all__sidebar-item">
-                  <h4>Download</h4>
+                  <h4>Materials We Machine</h4>
                   <div className="all__sidebar-item-download">
                     <ul>
+                      <li>Carbon steels (AISI/EN grades)</li>
                       <li>
-                        <Link to="#">
-                          Company Details
-                          <span className="fal fa-arrow-to-bottom"></span>
-                        </Link>
+                        Stainless steels (austenitic, martensitic, duplex)
+                      </li>
+                      <li>Cast iron (grey, ductile)</li>
+                      <li>Aluminum alloys (6061, 7075, etc.)</li>
+                      <li>Copper, brass, bronze</li>
+                      <li>
+                        Tool steels and hardened steels (for EDM & tool
+                        components)
                       </li>
                       <li>
-                        <Link to="#">
-                          Our Brochures
-                          <span className="fal fa-arrow-to-bottom"></span>
-                        </Link>
+                        Titanium and nickel alloys (Inconel) — with suitable
+                        tooling & strategies
+                      </li>
+                      <li>
+                        Engineering plastics (Delrin, Nylon, PTFE) for
+                        non-metallic parts
                       </li>
                     </ul>
                   </div>
@@ -61,130 +68,81 @@ const ServicesSingleMain = ({ singleData }) => {
             <div className="col-lg-8">
               <div className="services__details-area">
                 <img src={singleData.image} alt="image" />
-                <h3 className="mt-25 mb-20">{servicesData.title}</h3>
-                <p className="mb-20">
-                  We pride ourselves on delivering high-quality construction
-                  services tailored to meet the unique needs of our clients.
-                  With years of experience in the industry, our team of skilled
-                  professionals is dedicated to bringing your vision to life.
-                  Whether you are looking to build a new structure, renovate an
-                  existing space, or need specialized construction services, we
-                  are here to help.
-                </p>
-                <p className="mb-25">
-                  With years of industry experience, our team handles every
-                  aspect of the construction process, your project runs smoothly
-                  and efficiently. We prioritize open communication, timely
-                  delivery, and quality workmanship to exceed your expectations.
-                  Trust us to provide innovative solutions that.
-                </p>
-                <h4 className="mb-20">Building with Unmatched Excellence</h4>
-                <p>
-                  Transform your existing space with our renovation and
-                  remodeling services. Whether you want to update your kitchen,
-                  bathroom, or entire home, we bring innovative solutions to
-                  enhance your living space. Our team has extensive experience
-                  in commercial construction, including office buildings, retail
-                  spaces, and industrial facilities. We work closely with you to
-                  ensure your project align.
-                </p>
+                <h3 className="mt-25 mb-20">{singleData.title}</h3>
+                <p className="mb-20">{singleData.p1}</p>
+
+                <h4 className="mb-20">{singleData.h4}</h4>
+                <ul>
+                  {singleData.whyChoose.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
                 <div className="row mt-40 mb-40">
                   <div className="col-sm-6 sm-mb-25">
-                    <img className="img_full" src={image1} alt="image" />
+                    <img
+                      className="img_full"
+                      src={singleData.image2}
+                      alt="image"
+                    />
                   </div>
                   <div className="col-sm-6">
-                    <img className="img_full" src={image2} alt="image" />
+                    <img
+                      className="img_full"
+                      src={singleData.image3}
+                      alt="image"
+                    />
                   </div>
                 </div>
-                <p>
-                  We deliver exceptional construction services backed by years
-                  of experience. Our skilled team prioritizes quality,
-                  transparency, and client satisfaction. We utilize innovative
-                  techniques and sustainable practices, ensuring timely project
-                  completion. Trust us to bring your to life with unmatched
-                  craftsmanship
-                </p>
-                <ul className="services__details-area-list">
-                  <li>
-                    <i className="flaticon-check-mark"></i>Our skilled
-                    professionals bring years of experience a
-                  </li>
-                  <li>
-                    <i className="flaticon-check-mark"></i>We are the leading
-                    construction company in the industry.
-                  </li>
-                  <li>
-                    <i className="flaticon-check-mark"></i>Our transparent
-                    pricing ensures no hidden fees or surprises.
-                  </li>
-                  <li>
-                    <i className="flaticon-check-mark"></i>We adhere to strict
-                    safety standards on all job sites.
-                  </li>
+                <h4 className="mb-20">Core processes & operations:</h4>
+                <ul>
+                  {singleData.coreProcesses.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
                 </ul>
-                <h3>Commonly Asked Questions</h3>
+                <h4 className="mb-20">Performance & tolerances (typical):</h4>
+                <ul>
+                  {singleData.performance.map((item, index) => (
+                    <li key={index}>{item}</li>
+                  ))}
+                </ul>
+                <h3>Precision CNC Services:</h3>
                 <div className="mt-30" id="accordionExample">
-                  <div className="faq-item">
-                    <h5
-                      className="icon"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseOne"
-                    >
-                      1. What services do you offer?
-                    </h5>
-                    <div
-                      id="collapseOne"
-                      className="faq-item-body collapse show"
-                      data-bs-parent="#accordionExample"
-                    >
-                      <p>
-                        We offer a range of services including construction
-                        management, design-build solutions, renovations, and
-                        specialty contracting for both residential and
-                        commercial projects
-                      </p>
+                  {singleData.precisionServices.map((service, index) => (
+                    <div className="faq-item" key={index}>
+                      <h5
+                        className={`icon ${index === 0 ? "" : "collapsed"}`}
+                        data-bs-toggle="collapse"
+                        data-bs-target={`#collapse${index + 1}`}
+                      >
+                        {service.title}
+                      </h5>
+                      <div
+                        id={`collapse${index + 1}`}
+                        className={`faq-item-body collapse ${
+                          index === 0 ? "show" : ""
+                        }`}
+                        data-bs-parent="#accordionExample"
+                      >
+                        <p>{service.description}</p>
+                        <h5 className="mt-3 mb-2">
+                          <b>Core processes & operations:</b>
+                        </h5>
+                        <ul>
+                          {service.coreProcesses.map((item, i) => (
+                            <li key={i}>{item}</li>
+                          ))}
+                        </ul>
+                        <h5 className="mt-3 mb-2">
+                          <b>Performance & tolerances (typical):</b>
+                        </h5>
+                        <ul>
+                          {service.performance.map((item, i) => (
+                            <li key={i}>{item}</li>
+                          ))}
+                        </ul>
+                      </div>
                     </div>
-                  </div>
-                  <div className="faq-item">
-                    <h5
-                      className="icon collapsed"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseTwo"
-                    >
-                      2. Do you provide free estimates?
-                    </h5>
-                    <div
-                      id="collapseTwo"
-                      className="faq-item-body collapse"
-                      data-bs-parent="#accordionExample"
-                    >
-                      <p>
-                        Yes, we offer free estimates for all potential projects.
-                        We assess your requirements and provide a detailed quote
-                        without any obligation
-                      </p>
-                    </div>
-                  </div>
-                  <div className="faq-item">
-                    <h5
-                      className="icon collapsed"
-                      data-bs-toggle="collapse"
-                      data-bs-target="#collapseThree"
-                    >
-                      3. Are you licensed and insured?
-                    </h5>
-                    <div
-                      id="collapseThree"
-                      className="faq-item-body collapse"
-                      data-bs-parent="#accordionExample"
-                    >
-                      <p>
-                        Yes, we are fully licensed and insured to operate in our
-                        service areas. This ensures that your project is
-                        protected and complies with all local regulations
-                      </p>
-                    </div>
-                  </div>
+                  ))}
                 </div>
               </div>
             </div>

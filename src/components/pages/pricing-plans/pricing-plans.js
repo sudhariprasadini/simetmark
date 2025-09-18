@@ -5,7 +5,7 @@ const PricingPlansMain = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const carouselRef = useRef(null);
-  const cardWidth = 420; // Card width + gap
+  const cardWidth = 500; // Card width + gap
   const visibleCards = 3; // Number of cards visible at once
   // Technology data
   const technologies = [
