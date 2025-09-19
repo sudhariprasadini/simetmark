@@ -1,5 +1,5 @@
 import React from "react";
-import image from "../../../assets/img/page/experience.jpg";
+import image from "../../../assets/img/page/experience.png";
 import videoBg from "../../../assets/img/shape/shape.png";
 import Count from "../../common/count";
 import { Link } from "react-router-dom";
@@ -15,7 +15,7 @@ const ChooseUs = () => {
                 <img
                   className="wow img_left_animation"
                   src={image}
-                  alt="image"
+                  alt="imageexperience"
                 />
                 <div
                   className="choose__us-left-counter bounce_x"

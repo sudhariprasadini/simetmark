@@ -6,6 +6,7 @@ import image22 from "../assets/img/service/services-22.jpg";
 import image2 from "../assets/img/service/services-2.jpg";
 import image3 from "../assets/img/service/services-3.jpg";
 import image32 from "../assets/img/service/services-32.jpg";
+import image31 from "../assets/img/service/services-31.jpg";
 import image4 from "../assets/img/service/services-4.jpg";
 import image41 from "../assets/img/service/services-41.jpg";
 import image42 from "../assets/img/service/services-42.jpg";
@@ -313,7 +314,7 @@ const servicesData = [
       "Non-contact cutting with no mechanical stress on the part",
       "Mirror-like surface finishes achievable for tooling applications",
     ],
-    image2: "image31",
+    image2: image31,
     image3: image32,
     coreProcesses: [
       "Precision 2D profiling and contour cutting",

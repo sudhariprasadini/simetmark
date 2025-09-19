@@ -13,7 +13,7 @@ const Blog = () => {
                 News & Blog
               </span>
               <h2 className="wow fadeInRight" data-wow-delay=".6s">
-                Update News & Blogs
+                Our Projects
               </h2>
             </div>
           </div>
@@ -27,22 +27,16 @@ const Blog = () => {
             >
               <div className="blog__one-item">
                 <div className="blog__one-item-image">
-                  <Link to={`/blog/${data.id}`}>
-                    <img src={data.image} alt="blog" />
-                  </Link>
-                  <div className="blog__one-item-image-date">
+                  <img src={data.image} alt="blog" />
+
+                  {/* <div className="blog__one-item-image-date">
                     <h6>
                       <i className="fa-regular fa-calendar"></i>22 Dec
                     </h6>
-                  </div>
+                  </div> */}
                 </div>
                 <div className="blog__one-item-content">
-                  <h4>
-                    <Link to={`/blog/${data.id}`}>{data.title}</Link>
-                  </h4>
-                  <Link className="more_btn" to={`/blog/${data.id}`}>
-                    Read More<i className="flaticon-right-up"></i>
-                  </Link>
+                  <h4>{data.title}</h4>
                 </div>
               </div>
             </div>

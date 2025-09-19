@@ -4,7 +4,7 @@ import blogData from "../../../data/blog-data";
 import Social from "../../../data/social";
 import avatar1 from "../../../assets/img/team/member-5.jpg";
 import avatar2 from "../../../assets/img/team/member-3.jpg";
-import avatar3 from "../../../assets/img/team/member-1.jpg";
+import avatar3 from "../../../assets/img/team/member-1.png";
 import image1 from "../../../assets/img/about/about-1.png";
 import image2 from "../../../assets/img/page/choose-us.jpg";
 import FormArea from "../../contacts/form";

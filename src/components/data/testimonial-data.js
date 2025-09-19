@@ -1,8 +1,8 @@
 import avatar1 from "../assets/img/team/team-1.png";
-import avatar2 from "../assets/img/team/team-2.jpg";
+import avatar2 from "../assets/img/team/team-2.png";
 import avatar3 from "../assets/img/team/team-3.png";
-import avatar4 from "../assets/img/team/team-4.jpg";
-import avatar5 from "../assets/img/team/member-1.jpg";
+import avatar4 from "../assets/img/team/team-4.png";
+import avatar5 from "../assets/img/team/member-1.png";
 
 const testimonialData = [
   {

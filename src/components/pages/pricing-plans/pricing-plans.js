@@ -5,7 +5,7 @@ const PricingPlansMain = () => {
   const [currentIndex, setCurrentIndex] = useState(0);
   const [isTransitioning, setIsTransitioning] = useState(false);
   const carouselRef = useRef(null);
-  const cardWidth = 500; // Card width + gap
+  const cardWidth = 560; // Card width + gap
   const visibleCards = 3; // Number of cards visible at once
   // Technology data
   const technologies = [
@@ -21,10 +21,10 @@ const PricingPlansMain = () => {
         "Facing and Contour Machining",
         "Grooving and Parting",
         "Boring (up to 1050 mm height)",
-        "Thread Cutting (internal & external)",
-        "Taper and Step Turning",
-        "Hole Drilling (with turret or live tooling)",
-        "Handles large-diameter components with precision",
+        // "Thread Cutting (internal & external)",
+        // "Taper and Step Turning",
+        // "Hole Drilling (with turret or live tooling)",
+        // "Handles large-diameter components with precision",
       ],
       industries: [
         "Energy",
@@ -45,9 +45,9 @@ const PricingPlansMain = () => {
         "Contour Milling (complex 2D/3D forms)",
         "Drilling (accurate holes)",
         "Tapping (internal threads)",
-        "Slotting/Keyways (gears, pulleys, couplings)",
-        "Pocket Milling (cavities, tool paths)",
-        "Chamfering & Deburring (edge finishing)",
+        // "Slotting/Keyways (gears, pulleys, couplings)",
+        // "Pocket Milling (cavities, tool paths)",
+        // "Chamfering & Deburring (edge finishing)",
       ],
       industries: [
         "Automotive",
@@ -64,11 +64,11 @@ const PricingPlansMain = () => {
       description:
         "An advanced CNC wire-cut electric discharge machine specialized in high-accuracy cutting of hardened metals and complex shapes, ideal for precision tooling and intricate components.",
       capabilities: [
-        "Precision cutting of hard metals (steel, carbide, titanium, alloys)",
-        "±30° taper cutting (dies, stepped parts)",
-        "Die & Mold Components (progressive stamping tools, extrusion dies)",
-        "Contoured shapes & complex 2D profiles",
-        "Sharp internal corners & tight radii",
+        // "Precision cutting of hard metals (steel, carbide, titanium, alloys)",
+        // "±30° taper cutting (dies, stepped parts)",
+        // "Die & Mold Components (progressive stamping tools, extrusion dies)",
+        // "Contoured shapes & complex 2D profiles",
+        // "Sharp internal corners & tight radii",
         "Thin slotting & keyways",
         "Punch & die manufacturing",
         "Gear or spline profiles",
@@ -187,7 +187,7 @@ const PricingPlansMain = () => {
 
   const cardsContainerStyle = {
     display: "flex",
-    gap: "30px",
+    gap: "60px",
     padding: "0 20px",
     minWidth: "max-content",
   };
@@ -303,12 +303,12 @@ const PricingPlansMain = () => {
   const isMobile = window.innerWidth <= 768;
   const responsiveCardStyle = {
     ...cardStyle,
-    flex: isMobile ? "0 0 320px" : "0 0 400px",
+    flex: isMobile ? "0 0 420px" : "0 0 500px",
   };
 
   const responsiveContainerStyle = {
     ...cardsContainerStyle,
-    gap: isMobile ? "20px" : "30px",
+    gap: "60px",
     padding: isMobile ? "0 15px" : "0 20px",
   };
 
@@ -326,7 +326,7 @@ const PricingPlansMain = () => {
 
   const carouselScrollStyle = {
     display: "flex",
-    gap: "30px",
+    gap: "60px",
     padding: "0 20px",
     overflow: "hidden",
     scrollBehavior: "smooth",
@@ -417,7 +417,7 @@ const PricingPlansMain = () => {
         <div className="container-fluid">
           {/* Navigation Buttons */}
           <div style={carouselContainerStyle}>
-            <button
+            {/* <button
               style={leftNavStyle}
               onClick={prevCard}
               onMouseEnter={(e) => {
@@ -430,9 +430,9 @@ const PricingPlansMain = () => {
               }}
             >
               &#8249;
-            </button>
+            </button> */}
 
-            <button
+            {/* <button
               style={rightNavStyle}
               onClick={nextCard}
               onMouseEnter={(e) => {
@@ -445,7 +445,7 @@ const PricingPlansMain = () => {
               }}
             >
               &#8250;
-            </button>
+            </button> */}
 
             {/* Carousel Container */}
             <div
