@@ -1,16 +1,11 @@
 import React from "react";
-import bannerBg from "../../../assets/img/shape/banner-shape.png";
-import user from "../../../assets/img/avatar/user.png";
 import award from "../../../assets/img/shape/award.png";
 import image from "../../../assets/img/banner/banner.jpg";
 import { Link } from "react-router-dom";
 
 const BannerOne = () => {
   return (
-    <div
-      className="banner__one"
-      style={{ backgroundImage: `url(${bannerBg})` }}
-    >
+    <div className="banner__one" style={{ backgroundImage: `url(${image})` }}>
       <div className="container">
         <div className="row">
           <div className="col-xl-12">
@@ -51,9 +46,6 @@ const BannerOne = () => {
             </div>
           </div>
         </div>
-      </div>
-      <div className="banner__one-image">
-        <img className="img_full" src={image} alt="imageMain" />
       </div>
     </div>
   );
