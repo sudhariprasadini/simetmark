@@ -94,11 +94,11 @@ const AboutMain = () => {
                   <li>Value-Added Exports (40%+)</li>
                   <li>Commitment to Sustainability</li>
                 </ul>
-                <div className="item_bounce">
+                {/* <div className="item_bounce">
                   <Link className="build_button mt-20" to="/portfolio">
                     See Projects<i className="flaticon-right-up"></i>
                   </Link>
-                </div>
+                </div> */}
               </div>
             </div>
           </div>

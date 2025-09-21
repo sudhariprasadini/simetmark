@@ -138,12 +138,12 @@ const PricingPlansMain = () => {
 
   const cardStyle = {
     flex: "0 0 400px",
-    background: "#ffffff",
+    background: "#FFFFFF",
     borderRadius: "15px",
     overflow: "hidden",
     boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
     transition: "all 0.3s ease",
-    border: "1px solid #e5e5e5",
+    border: "1px solid #595A5C",
   };
 
   const imgStyle = {
@@ -160,13 +160,13 @@ const PricingPlansMain = () => {
     fontSize: "24px",
     fontWeight: "700",
     marginBottom: "8px",
-    color: "#333",
+    color: "#000000",
   };
 
   const specStyle = {
     display: "inline-block",
-    background: "#F7B500",
-    color: "#ffffff",
+    background: "#F48520",
+    color: "#FFFFFF",
     padding: "6px 12px",
     borderRadius: "20px",
     fontSize: "14px",
@@ -175,7 +175,7 @@ const PricingPlansMain = () => {
   };
 
   const descStyle = {
-    color: "#666",
+    color: "#595A5C",
     lineHeight: "1.6",
     fontSize: "16px",
     marginBottom: "25px",
@@ -184,7 +184,7 @@ const PricingPlansMain = () => {
   const sectionTitleStyle = {
     fontSize: "18px",
     fontWeight: "600",
-    color: "#333",
+    color: "#000000",
     marginBottom: "15px",
   };
 
@@ -198,11 +198,11 @@ const PricingPlansMain = () => {
     fontSize: "15px",
     lineHeight: "28px",
     marginBottom: "8px",
-    color: "#666",
+    color: "#595A5C",
   };
 
   const checkIconStyle = {
-    color: "#F7B500",
+    color: "#F48520",
     fontSize: "14px",
     marginRight: "8px",
   };
@@ -215,18 +215,18 @@ const PricingPlansMain = () => {
   };
 
   const tagStyle = {
-    background: "#f8f9fa",
-    color: "#333",
+    background: "#FFFFFF",
+    color: "#000000",
     padding: "6px 12px",
     borderRadius: "15px",
     fontSize: "13px",
     fontWeight: "500",
-    border: "1px solid #e5e5e5",
+    border: "1px solid #595A5C",
   };
 
   const buttonStyle = {
-    background: "#F7B500",
-    color: "#ffffff",
+    background: "#F48520",
+    color: "#FFFFFF",
     border: "none",
     padding: "12px 32px",
     width: "100%",
@@ -277,15 +277,15 @@ const PricingPlansMain = () => {
             height: 8px;
           }
           .tech-scroll::-webkit-scrollbar-track {
-            background: #f1f1f1;
+            background: #FFFFFF;
             border-radius: 4px;
           }
           .tech-scroll::-webkit-scrollbar-thumb {
-            background: #F7B500;
+            background: #F48520;
             border-radius: 4px;
           }
           .tech-scroll::-webkit-scrollbar-thumb:hover {
-            background: #d4b045;
+            background: #EC2025;
           }
         `}
       </style>
@@ -356,10 +356,10 @@ const PricingPlansMain = () => {
                           to="/contact-us"
                           style={buttonStyle}
                           onMouseEnter={(e) => {
-                            e.currentTarget.style.background = "#d4b045";
+                            e.currentTarget.style.background = "#EC2025";
                           }}
                           onMouseLeave={(e) => {
-                            e.currentTarget.style.background = "#F7B500";
+                            e.currentTarget.style.background = "#F48520";
                           }}
                         >
                           Learn More <i className="flaticon-right-up"></i>
