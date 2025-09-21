@@ -1,12 +1,38 @@
-import React, { useState, useRef, useEffect, useCallback } from "react";
+import React from "react";
 import { Link } from "react-router-dom";
+import { Swiper, SwiperSlide } from "swiper/react";
+import { Autoplay, Navigation } from "swiper/modules";
 
 const PricingPlansMain = () => {
-  const [currentIndex, setCurrentIndex] = useState(0);
-  const [isTransitioning, setIsTransitioning] = useState(false);
-  const carouselRef = useRef(null);
-  const cardWidth = 560; // Card width + gap
-  const visibleCards = 3; // Number of cards visible at once
+  const slideControl = {
+    spaceBetween: 60,
+    slidesPerView: 3,
+    speed: 1000,
+    loop: true,
+    autoplay: {
+      delay: 5000,
+      reverseDirection: false,
+      disableOnInteraction: false,
+    },
+    navigation: {
+      nextEl: ".pricing_next",
+      prevEl: ".pricing_prev",
+    },
+    breakpoints: {
+      0: {
+        slidesPerView: 1,
+      },
+      768: {
+        slidesPerView: 2,
+      },
+      1025: {
+        slidesPerView: 3,
+      },
+      1600: {
+        slidesPerView: 3,
+      },
+    },
+  };
   // Technology data
   const technologies = [
     {
@@ -90,7 +116,7 @@ const PricingPlansMain = () => {
       description:
         "A CNC-controlled flame cutting system designed for large-scale steel plate cutting. Provides efficient, cost-effective solutions for heavy structural and industrial fabrication.",
       capabilities: [
-        "Cutting large steel sheets (up to 3000 mm x 2000 mm)",
+        "Cutting large steel sheets ",
         "Capable of cutting very thick steel economically",
         "Multiple torch/nesting programs for bulk production",
         "Structural and machinery component preparation",
@@ -100,96 +126,14 @@ const PricingPlansMain = () => {
         "Structural Steel Fabrication",
         "Shipbuilding",
         "Construction Machinery",
-        "Industrial Equipment Manufacturing",
       ],
     },
   ];
-
-  // Create extended array for infinite scroll
-  const extendedTechnologies = [
-    ...technologies,
-    ...technologies, // Duplicate for seamless infinite scroll
-    ...technologies,
-  ];
-
-  // Navigation functions
-  const scrollToCard = useCallback(
-    (index) => {
-      if (isTransitioning) return;
-
-      setIsTransitioning(true);
-      const realIndex = index % technologies.length;
-      setCurrentIndex(realIndex);
-
-      if (carouselRef.current) {
-        const scrollPosition = (technologies.length + realIndex) * cardWidth;
-        carouselRef.current.scrollTo({
-          left: scrollPosition,
-          behavior: "smooth",
-        });
-      }
-
-      setTimeout(() => setIsTransitioning(false), 300);
-    },
-    [isTransitioning, technologies.length, cardWidth]
-  );
-
-  const nextCard = () => {
-    const nextIndex = (currentIndex + 1) % technologies.length;
-    scrollToCard(nextIndex);
-  };
-
-  const prevCard = () => {
-    const prevIndex =
-      (currentIndex - 1 + technologies.length) % technologies.length;
-    scrollToCard(prevIndex);
-  };
-
-  const handleCardClick = (index) => {
-    const realIndex = index % technologies.length;
-    if (realIndex !== currentIndex) {
-      scrollToCard(realIndex);
-    }
-  };
-
-  // Auto-scroll functionality
-  useEffect(() => {
-    const interval = setInterval(() => {
-      if (!isTransitioning) {
-        const nextIndex = (currentIndex + 1) % technologies.length;
-        scrollToCard(nextIndex);
-      }
-    }, 5000); // Auto scroll every 5 seconds
-
-    return () => clearInterval(interval);
-  }, [currentIndex, isTransitioning, technologies.length]);
-
-  // Initialize carousel position
-  useEffect(() => {
-    if (carouselRef.current) {
-      carouselRef.current.scrollLeft = technologies.length * cardWidth;
-    }
-  }, [technologies.length, cardWidth]);
 
   // Inline styles for immediate application
   const containerStyle = {
     padding: "60px 0",
     overflow: "hidden",
-  };
-
-  const scrollContainerStyle = {
-    overflowX: "auto",
-    overflowY: "hidden",
-    WebkitOverflowScrolling: "touch",
-    padding: "20px 0",
-    scrollbarWidth: "thin",
-  };
-
-  const cardsContainerStyle = {
-    display: "flex",
-    gap: "60px",
-    padding: "0 20px",
-    minWidth: "max-content",
   };
 
   const cardStyle = {
@@ -200,12 +144,6 @@ const PricingPlansMain = () => {
     boxShadow: "0 10px 30px rgba(0, 0, 0, 0.1)",
     transition: "all 0.3s ease",
     border: "1px solid #e5e5e5",
-  };
-
-  const imageStyle = {
-    position: "relative",
-    height: "250px",
-    overflow: "hidden",
   };
 
   const imgStyle = {
@@ -306,12 +244,6 @@ const PricingPlansMain = () => {
     flex: isMobile ? "0 0 420px" : "0 0 500px",
   };
 
-  const responsiveContainerStyle = {
-    ...cardsContainerStyle,
-    gap: "60px",
-    padding: isMobile ? "0 15px" : "0 20px",
-  };
-
   const responsiveContentStyle = {
     ...contentStyle,
     padding: isMobile ? "20px" : "30px",
@@ -324,68 +256,12 @@ const PricingPlansMain = () => {
     padding: "20px 0",
   };
 
-  const carouselScrollStyle = {
-    display: "flex",
-    gap: "60px",
-    padding: "0 20px",
-    overflow: "hidden",
-    scrollBehavior: "smooth",
-    cursor: "grab",
-  };
-
   const updatedCardStyle = {
     ...responsiveCardStyle,
     cursor: "pointer",
     transition: "all 0.3s ease",
     opacity: 1,
   };
-
-  // Navigation buttons style
-  const navButtonStyle = {
-    position: "absolute",
-    top: "50%",
-    transform: "translateY(-50%)",
-    background: "#F7B500",
-    color: "#ffffff",
-    border: "none",
-    borderRadius: "50%",
-    width: "50px",
-    height: "50px",
-    cursor: "pointer",
-    fontSize: "20px",
-    zIndex: 10,
-    transition: "all 0.3s ease",
-    display: "flex",
-    alignItems: "center",
-    justifyContent: "center",
-  };
-
-  const leftNavStyle = {
-    ...navButtonStyle,
-    left: "10px",
-  };
-
-  const rightNavStyle = {
-    ...navButtonStyle,
-    right: "10px",
-  };
-
-  // Indicators style
-  const indicatorsStyle = {
-    display: "flex",
-    justifyContent: "center",
-    gap: "10px",
-    marginTop: "30px",
-  };
-
-  const indicatorStyle = (isActive) => ({
-    width: "12px",
-    height: "12px",
-    borderRadius: "50%",
-    background: isActive ? "#F7B500" : "#e0e0e0",
-    cursor: "pointer",
-    transition: "all 0.3s ease",
-  });
 
   const responsiveImageStyle = {
     position: "relative",
@@ -415,76 +291,30 @@ const PricingPlansMain = () => {
       </style>
       <div style={containerStyle}>
         <div className="container-fluid">
-          {/* Navigation Buttons */}
           <div style={carouselContainerStyle}>
-            {/* <button
-              style={leftNavStyle}
-              onClick={prevCard}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = "#d4b045";
-                e.currentTarget.style.transform = "translateY(-50%) scale(1.1)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = "#F7B500";
-                e.currentTarget.style.transform = "translateY(-50%) scale(1)";
-              }}
-            >
-              &#8249;
-            </button> */}
-
-            {/* <button
-              style={rightNavStyle}
-              onClick={nextCard}
-              onMouseEnter={(e) => {
-                e.currentTarget.style.background = "#d4b045";
-                e.currentTarget.style.transform = "translateY(-50%) scale(1.1)";
-              }}
-              onMouseLeave={(e) => {
-                e.currentTarget.style.background = "#F7B500";
-                e.currentTarget.style.transform = "translateY(-50%) scale(1)";
-              }}
-            >
-              &#8250;
-            </button> */}
-
-            {/* Carousel Container */}
             <div
-              ref={carouselRef}
-              style={carouselScrollStyle}
-              className="tech-scroll"
+              className="slider-arrow jc-end lg-jc-center mb-10"
+              style={{
+                position: "absolute",
+                right: "20px",
+                top: "20px",
+                zIndex: 10,
+              }}
             >
-              {extendedTechnologies.map((tech, index) => {
-                const realIndex = index % technologies.length;
-                const isActive = realIndex === currentIndex;
-                const isVisible =
-                  Math.abs((index % technologies.length) - currentIndex) <=
-                  visibleCards / 2;
-
-                return (
+              <div className="slider-arrow-prev pricing_prev">
+                <i className="fa-sharp fa-regular fa-arrow-left-long"></i>
+              </div>
+              <div className="slider-arrow-next pricing_next">
+                <i className="fa-sharp fa-regular fa-arrow-right-long"></i>
+              </div>
+            </div>
+            <Swiper modules={[Autoplay, Navigation]} {...slideControl}>
+              {technologies.map((tech, id) => (
+                <SwiperSlide key={id}>
                   <div
-                    key={`${tech.id}-${index}`}
-                    style={{
-                      ...updatedCardStyle,
-                      opacity: isVisible ? 1 : 0.7,
-                      transform: isActive ? "scale(1.05)" : "scale(1)",
-                    }}
+                    style={updatedCardStyle}
                     className="wow fadeInUp"
-                    data-wow-delay={`.${4 + index * 3}s`}
-                    onClick={() => handleCardClick(index)}
-                    onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = isActive
-                        ? "scale(1.1) translateY(-10px)"
-                        : "scale(1.05) translateY(-5px)";
-                      e.currentTarget.style.boxShadow =
-                        "0 20px 40px rgba(0, 0, 0, 0.15)";
-                    }}
-                    onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = isActive
-                        ? "scale(1.05)"
-                        : "scale(1)";
-                      e.currentTarget.style.boxShadow =
-                        "0 10px 30px rgba(0, 0, 0, 0.1)";
-                    }}
+                    data-wow-delay={`.${4 + id * 3}s`}
                   >
                     <div style={responsiveImageStyle}>
                       <img src={tech.image} alt={tech.title} style={imgStyle} />
@@ -537,20 +367,9 @@ const PricingPlansMain = () => {
                       </div>
                     </div>
                   </div>
-                );
-              })}
-            </div>
-          </div>
-
-          {/* Carousel Indicators */}
-          <div style={indicatorsStyle}>
-            {technologies.map((_, index) => (
-              <div
-                key={index}
-                style={indicatorStyle(index === currentIndex)}
-                onClick={() => scrollToCard(index)}
-              />
-            ))}
+                </SwiperSlide>
+              ))}
+            </Swiper>
           </div>
         </div>
       </div>
