@@ -4736,6 +4736,26 @@ Responsive Menu Css
     left: 12px;
   }
 }
+
+/* History Grid Responsive Layout */
+.history-grid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 24px;
+}
+
+.history-card {
+  flex: 1 1 calc(50% - 24px);
+  box-sizing: border-box;
+  margin-bottom: 24px;
+}
+
+@media (max-width: 768px) {
+  .history-card {
+    flex: 1 1 100%;
+  }
+}
+
 /*==========================================================================
 * Blog One CSS
 ==========================================================================*/

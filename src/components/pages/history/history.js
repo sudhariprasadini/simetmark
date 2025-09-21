@@ -7,16 +7,9 @@ const CompanyHistory = () => {
       <div className="container">
         <div className="row">
           <div className="col-xl-12">
-            <div style={{ display: "flex", flexWrap: "wrap", gap: "24px" }}>
+            <div className="history-grid">
               {historyData.map((item, id) => (
-                <div
-                  key={id}
-                  style={{
-                    flex: "1 1 calc(50% - 24px)",
-                    boxSizing: "border-box",
-                    marginBottom: "24px",
-                  }}
-                >
+                <div key={id} className="history-card">
                   <div
                     className="company__history-area-item-inner"
                     style={{ paddingLeft: "0", borderLeft: "none" }}
