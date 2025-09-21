@@ -17,7 +17,10 @@ const CompanyHistory = () => {
                     marginBottom: "24px",
                   }}
                 >
-                  <div className="company__history-area-item-inner">
+                  <div
+                    className="company__history-area-item-inner"
+                    style={{ paddingLeft: "0", borderLeft: "none" }}
+                  >
                     <div className="company__history-area-item-inner-image">
                       <img src={item.image} alt={item.title} />
                     </div>
